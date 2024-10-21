@@ -1,0 +1,8 @@
+.DS_Store
+.gradle
+/build/
+/out/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+.idea/
