@@ -1,0 +1,38 @@
+@startuml
+
+package java.lang {
+
+    +interface Iterable<T> {
+        +iterator(): Iterator<T>
+    }
+}
+
+package java.util.function {
+
+     interface Predicate<T> {
+        +test(t: T): boolean
+        }
+
+     interface Consumer<T> {
+        +accept(T t): void
+     }
+
+}
+
+package de.thro.inf.prg3.a04.collections {
+
+    interface SimpleList<T> extends Iterable {
+                +add(item: T)
+                +get(index: int): T
+                +void set(index: int, item: T)
+                +addDefault(clazz: Class<T>)
+                +makeInstance(): SimpleList<T>
+                +size(): int
+                +filter(predicate: Predicate<T>): SimpleList<T>
+                +forEach(consumer: Consumer<? super T>): void
+            }
+
+    +abstract class CollectionsUtility {
+        +{static}<T> sort(list: SimpleList<T>): SimpleList<T>
+}
+@enduml

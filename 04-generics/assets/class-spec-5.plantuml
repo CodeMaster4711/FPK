@@ -1,0 +1,10 @@
+@startuml
+package de.thro.inf.prg3.a04.utils {
+
+    +abstract class PlantBedUtility{
+        +{static} <T> splitBedByColor(bed: PlantBed<T>) : Map<PlantColor, SimpleList<T>>
+        +{static}<T> pecs(dest: SimpleList<T>, source: SimpleList<T>): void
+        +{static}<T> pecsWithFilter(dest: SimpleList<T>, source: SimpleList<T>, predicate: Predicate<T>): void
+    }
+}
+@enduml

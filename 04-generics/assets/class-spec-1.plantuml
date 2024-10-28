@@ -1,0 +1,43 @@
+@startuml
+package java.lang {
+    
+    interface Iterable<T> {
+        +iterator(): Iterator<T>
+    }
+
+    interface Iterator<T> {
+        +hasNext(): boolean
+        +next(): T
+    }
+}
+
+package de.thro.inf.prg3.a04.collections {
+
+        interface SimpleList<T> extends Iterable {
+            +add(item: T)
+            +get(index: int): T
+            +set(index: int, item: T)
+            +size(): int
+            +filter(predicate: Predicate<T>): SimpleList<T>
+        }
+
+        class SimpleListImpl<T> implements SimpleList {
+           -head: ListElement
+        }
+
+        class SimpleIterator implements Iterator {
+        }
+
+        -class ListElement<T> {
+            -item: T
+            -next: ListElement<T>
+    
+            +getItem(): T
+            +getNext(): ListElement<T>
+            +setNext(e: ListElement<T>)
+        }
+
+        SimpleListImpl +-- ListElement
+        ListElement --* SimpleListImpl
+    }
+@enduml

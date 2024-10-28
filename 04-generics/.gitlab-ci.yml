@@ -1,0 +1,17 @@
+image: java:8-jdk
+
+stages:
+  - build
+
+before_script:
+  - echo `pwd` # debug
+
+build:
+  stage: build
+  script:
+    - ./gradlew test
+  only:
+    - musterloesung
+
+after_script:
+  - echo "End CI"

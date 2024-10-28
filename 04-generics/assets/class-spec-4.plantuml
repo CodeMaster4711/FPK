@@ -1,0 +1,13 @@
+@startuml
+package de.thro.inf.prg3.a04.model {
+
+    +class PlantBed<T> {
+        -plants: SimpleList<T>
+
+        +add(plant: T)
+        +size(): int
+        +getPlantsByColor(color: PlantColor): SimpleList<T>
+        +getPlants(): SimpleList<T>
+    }
+}
+@enduml

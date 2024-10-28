@@ -1,0 +1,36 @@
+@startuml
+package java.lang {
+
+    interface Comparable<T> {
+        +compareTo(other: T): int
+    }
+}
+
+package de.thro.inf.prg3.a04.model {
+        +enum PlantColor {
+            GREEN,
+            YELLOW,
+            RED,
+            BLUE,
+            ORANGE,
+            VIOLETTE
+        }
+
+        +abstract class Plant implements Comparable {
+            -height: double
+            -family: String
+            -name: String
+
+            +getHeight(): double
+            +getFamily(): String
+            +getName(): String
+            +{abstract} getColor(): PlantColor
+        }
+
+        +class Flower extends Plant {
+        }
+
+        +class Shrub extends Plant{
+        }
+    }
+@enduml
