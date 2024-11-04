@@ -1,0 +1,14 @@
+@startuml GsonSpec
+
+package com.google.gson {
+    +abstract class TypeAdapter<T> {
+    }
+}
+
+
+package de.thro.inf.prg3.a06 {
+    +class JokeAdapter extends TypeAdapter {
+    }
+}
+
+@enduml

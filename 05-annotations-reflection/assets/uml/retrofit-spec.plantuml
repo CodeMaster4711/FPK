@@ -1,0 +1,17 @@
+@startuml RetrofitAdapter
+
+package de.thro.inf.fpk.a06 {
+
+    +interface ICNDBApi {
+        getRandomJoke(): Call<JokeResponse>
+        getRandomJoke(categoriesToInclude: String[]): Call<JokeResponse>
+        getRandomJokes(count: int): Call<JokesResponse>
+        getJokeById(id: int): Call<JokeResponse>
+    }
+
+    +class App {
+        +{static} main(args: String[]): void
+    }
+}
+
+@enduml

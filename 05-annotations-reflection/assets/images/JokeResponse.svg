@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="137px" preserveAspectRatio="none" style="width:357px;height:137px;" version="1.1" viewBox="0 0 357 137" width="357px" zoomAndPan="magnify"><defs><filter height="300%" id="f1lrash425oc5m" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[cbf666829d97a31734ad13a85f8407b4]
+cluster de.thro.inf.fpk.a06.model--><polygon fill="#FFFFFF" filter="url(#f1lrash425oc5m)" points="14,16,220,16,227,38.2969,335,38.2969,335,125,14,125,14,16" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="14" x2="227" y1="38.2969" y2="38.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="200" x="18" y="30.9951">de.thro.inf.fpk.a06.model</text><!--MD5=[90818516fa7c1f63e87b780181b9a590]
+class JokeResponse--><rect fill="#FEFECE" filter="url(#f1lrash425oc5m)" height="73.6094" id="JokeResponse" style="stroke: #A80036; stroke-width: 1.5;" width="131" x="195.5" y="43"/><ellipse cx="210.5" cy="59" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M213.4688,64.6406 Q212.8906,64.9375 212.25,65.0859 Q211.6094,65.2344 210.9063,65.2344 Q208.4063,65.2344 207.0859,63.5859 Q205.7656,61.9375 205.7656,58.8125 Q205.7656,55.6875 207.0859,54.0313 Q208.4063,52.375 210.9063,52.375 Q211.6094,52.375 212.2578,52.5313 Q212.9063,52.6875 213.4688,52.9844 L213.4688,55.7031 Q212.8438,55.125 212.25,54.8516 Q211.6563,54.5781 211.0313,54.5781 Q209.6875,54.5781 209,55.6484 Q208.3125,56.7188 208.3125,58.8125 Q208.3125,60.9063 209,61.9766 Q209.6875,63.0469 211.0313,63.0469 Q211.6563,63.0469 212.25,62.7734 Q212.8438,62.5 213.4688,61.9219 L213.4688,64.6406 Z "/><ellipse cx="229.5" cy="58.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="88" x="235.5" y="63.1543">JokeResponse</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="196.5" x2="325.5" y1="75" y2="75"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="66" x="201.5" y="89.2104">type: String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="65" x="201.5" y="102.0151">value : Joke</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="196.5" x2="325.5" y1="108.6094" y2="108.6094"/><!--MD5=[b9b0aa2ec7e798ed97a71e0e9a30ddb3]
+class JokesResponse--><rect fill="#FEFECE" filter="url(#f1lrash425oc5m)" height="73.6094" id="JokesResponse" style="stroke: #A80036; stroke-width: 1.5;" width="138" x="22" y="43"/><ellipse cx="37" cy="59" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M39.9688,64.6406 Q39.3906,64.9375 38.75,65.0859 Q38.1094,65.2344 37.4063,65.2344 Q34.9063,65.2344 33.5859,63.5859 Q32.2656,61.9375 32.2656,58.8125 Q32.2656,55.6875 33.5859,54.0313 Q34.9063,52.375 37.4063,52.375 Q38.1094,52.375 38.7578,52.5313 Q39.4063,52.6875 39.9688,52.9844 L39.9688,55.7031 Q39.3438,55.125 38.75,54.8516 Q38.1563,54.5781 37.5313,54.5781 Q36.1875,54.5781 35.5,55.6484 Q34.8125,56.7188 34.8125,58.8125 Q34.8125,60.9063 35.5,61.9766 Q36.1875,63.0469 37.5313,63.0469 Q38.1563,63.0469 38.75,62.7734 Q39.3438,62.5 39.9688,61.9219 L39.9688,64.6406 Z "/><ellipse cx="56" cy="58.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="95" x="62" y="63.1543">JokesResponse</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="23" x2="159" y1="75" y2="75"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="70" x="28" y="89.2104">type : String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="28" y="102.0151">value: Jokes[]</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="23" x2="159" y1="108.6094" y2="108.6094"/><!--MD5=[c867196f2f738835a60b67e6360ec7b5]
+@startuml
+package de.thro.inf.fpk.a06.model {
+    +class JokeResponse {
+      type: String
+      value : Joke
+    }
+  
+    +class JokesResponse {
+      type : String
+      value: Jokes[]
+    
+}
+}
+@enduml
+
+PlantUML version 1.2019.11(Sun Sep 22 10:02:15 UTC 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_222-heroku-b10
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
