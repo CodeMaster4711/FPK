@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'idea'
+	id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+group 'de.thro.inf.prg3'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+mainClassName = 'de.thro.inf.prg3.a07.App'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation("org.apache.commons:commons-lang3:$commons_lang3_version")
+	implementation("org.apache.logging.log4j:log4j-api:${log4j2Version}")
+	implementation("org.apache.logging.log4j:log4j-core:${log4j2Version}")
+
+	implementation "com.squareup.okhttp3:logging-interceptor:${okhttp_version}"
+	implementation "com.squareup.retrofit2:retrofit:${retrofit2_version}"
+	implementation "com.squareup.retrofit2:converter-gson:${retrofit2_version}"
+
+	testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+	testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+	testImplementation("org.junit.jupiter:junit-jupiter-params:${junitVersion}")
+}
+
+javafx {
+	modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+test {
+	useJUnitPlatform()
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}

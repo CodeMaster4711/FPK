@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="485.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thro.ui.controller.ListViewUiController">
+   <children>
+      <VBox alignment="CENTER" layoutX="148.0" layoutY="26.0" prefHeight="73.0" prefWidth="305.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="245.0" text="ListView Example">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Search a name" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="searchField" prefHeight="26.0" prefWidth="248.0" text="Search a name" />
+                  <Button mnemonicParsing="false" text="Search" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <ListView fx:id="listViewBox" layoutX="148.0" layoutY="97.0" prefHeight="236.0" prefWidth="305.0" />
+      <Label layoutX="273.0" layoutY="340.0" text="Enter Text" />
+      <TextField fx:id="txtAddItem" layoutX="148.0" layoutY="363.0" prefHeight="26.0" prefWidth="305.0" text="Enter a name" />
+      <HBox layoutX="223.0" layoutY="395.0" prefHeight="28.0" prefWidth="154.0">
+         <children>
+            <Button mnemonicParsing="false" text="Add" />
+            <Button mnemonicParsing="false" text="Delete" />
+            <Button mnemonicParsing="false" text="Update" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
