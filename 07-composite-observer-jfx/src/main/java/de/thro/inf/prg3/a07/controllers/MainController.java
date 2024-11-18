@@ -1,111 +1,91 @@
 package de.thro.inf.prg3.a07.controllers;
 
-import de.thro.inf.prg3.a07.api.OpenMensaAPI;
-import de.thro.inf.prg3.a07.model.Meal;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
+import javafx.application.Platform;
+import de.thro.inf.prg3.a07.model.Meal;
+import de.thro.inf.prg3.a07.api.OpenMensaAPI;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-import java.util.*;
-import java.util.stream.Collectors;
-
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-	public void MainController() {
-		Retrofit retrofit = new Retrofit.Builder()
-			.baseUrl("http://openmensa.org/api/v2/")
-			.addConverterFactory(GsonConverterFactory.create())
-			.build();
 
-		api = retrofit.create(OpenMensaAPI.class);
-	}
-	// use annotation to tie to component in XML
-	@FXML
-	private Button btnRefresh;
+    @FXML
+    private Button btnRefresh;
 
-	@FXML
-	private Button btnClose;
+    @FXML
+    private Button btnClose;
 
-	@FXML
-	private CheckBox chkVegetarian;
+    @FXML
+    private CheckBox chkVegetarian;
 
-	@FXML
-	private DatePicker datePicker;
+    @FXML
+    private ListView<String> mealsList;
 
-	private OpenMensaAPI api;
+    private ObservableList<Meal> meals = FXCollections.observableArrayList();
+    private OpenMensaAPI api;
 
-	@FXML
-	private ListView<Meal> mealsList;
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        initializeAPI();
+        btnClose.setOnAction(event -> System.exit(0));
+        btnRefresh.setOnAction(event -> refreshMeals());
+        chkVegetarian.setOnAction(event -> filterMeals());
+    }
 
-	// list to carry the data
-	private ObservableList<Meal> meals = FXCollections.observableArrayList();
+    private void initializeAPI() {
+        Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl("https://openmensa.org/api/v2/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
+        api = retrofit.create(OpenMensaAPI.class);
+    }
 
+	private void refreshMeals() {
+		String testDate = "2021-11-10";
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		mealsList.setItems(meals);
-
-		btnRefresh.setOnAction(this::doUpdate);
-
-		chkVegetarian.setOnAction(this::doFilter);
-	}
-
-	private void doFilter(ActionEvent actionEvent) {
-		if (chkVegetarian.isSelected())
-			mealsList.setItems(meals.filtered(m -> m.getNotes().stream().noneMatch(s -> s.toLowerCase().contains("fleisch"))));
-		else
-			mealsList.setItems(meals);
-	}
-
-	private void doUpdate(ActionEvent ev) {
-		System.out.println("ok");
-
-		LocalDate d = datePicker.getValue();
-		String today = DateTimeFormatter.ISO_LOCAL_DATE.format(d);
-
-		System.out.println("Date :" + today);
-		api.getMeals(229, today).enqueue(new Callback<List<Meal>>() {
+		api.getMeals(229, testDate).enqueue(new Callback<List<Meal>>() {
 			@Override
 			public void onResponse(Call<List<Meal>> call, Response<List<Meal>> response) {
 				if (!response.isSuccessful() || response.body() == null)
 					return;
 
-				// run async update!
 				Platform.runLater(() -> {
 					meals.clear();
 					meals.addAll(response.body());
+					filterMeals();
 				});
 			}
 
 			@Override
 			public void onFailure(Call<List<Meal>> call, Throwable t) {
-				System.out.println("Meh");
+				System.out.println("Failed to fetch meals");
 			}
 		});
 	}
 
-	@FXML
-	public void onCloseClicked(ActionEvent event) {
-		Platform.exit();
-		System.exit(0);
-	}
+    private void filterMeals() {
+        ObservableList<String> filteredMeals = FXCollections.observableArrayList();
+        for (Meal meal : meals) {
+            if (!chkVegetarian.isSelected() || meal.isVegetarian()) {
+                filteredMeals.add(meal.getName());
+            }
+        }
+        mealsList.setItems(filteredMeals);
+    }
 }

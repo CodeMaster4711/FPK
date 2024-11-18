@@ -91,4 +91,13 @@ public class Meal {
 		}
 		return String.format("%s\n%s\n%s", name, category, notesBuilder.toString());
 	}
+
+	public boolean isVegetarian() {
+		for (String note : notes) {
+			if (note.toLowerCase().contains("fleisch")) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
